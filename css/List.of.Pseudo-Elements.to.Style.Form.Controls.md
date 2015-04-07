@@ -8,3 +8,34 @@
 
 * 此处罗列的所有的 Trident 伪元素都在 IE10 中引入，将不会在老版本的 IE 浏览器中生效。
 * 在 WebKit 引擎中，为了设置某些伪元素的样式，你必须先将基础元素的 `-webkit-appearance` 伪类设置为 `none` 。例如，为了给 `::-webkit-progress-bar` 设置样式，你必须给相应的 `<progress>` 元素设置 `-webkit-appearance: none;` 。
+
+内容导航：
+
+* &lt;input&gt; 元素
+
+  - button
+  - checkbox / radio
+  - color
+  - date
+  - file
+  - number
+  - password
+  - placeholder attribute
+  - range
+  - reset
+  - search
+  - submit
+  - text
+
+* 其它元素
+
+  - button
+  - keygen
+  - meter
+  - progress
+  - select
+  - textarea
+
+* 乱七八糟的
+
+  - 表单验证提示信息
