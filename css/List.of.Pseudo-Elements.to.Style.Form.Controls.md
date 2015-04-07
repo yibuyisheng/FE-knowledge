@@ -197,3 +197,93 @@
   ![](http://tjvantoll.com/images/posts/2013-04-15/webkit-input-number.png)
   
   
+#### input[type=password]
+
+  **Trident**
+  
+  Trident 给密码输入框提供了一个按钮控件，点击该按钮后可以看到密码的明文形式。这个控件可通过 `::-ms-reveal` 伪元素来自定义外观。你可以改变很多该控件的样式，包括 `color` ， `background` ，或者用 `display` 来隐藏控件。下列代码就可以隐藏控件：
+  
+  ```html
+  <input type="password">
+  ```
+  
+  ```css
+  ::-ms-reveal { display: none; }
+  ```
+  
+  这在 Windows 8 的 IE10 中显示成这样：
+  
+  ![](http://tjvantoll.com/images/posts/2013-04-15/trident-input-password.png)
+  
+  
+#### placeholder 属性
+
+  **Gecko**
+  
+  Gecko 提供了 `::-moz-placeholder` 伪元素来给 placeholder 文本添加样式。你可以用它来改变 placeholder 文本的颜色或者字体属性。例如：
+  
+  ```html
+  <input placeholder="placeholder">
+  ```
+  
+  ```css
+  ::-moz-placeholder {
+      color: blue;
+      font-family: 'Comic Sans MS';
+  }
+  ```
+  
+  这在 OS X 的 FireFox 20 中显示成这样：
+  
+  ![](http://tjvantoll.com/images/posts/2013-04-15/gecko-placeholder.png)
+  
+  _注意： Gecko 在 FireFox 19 中将伪类 `:-moz-placeholder` 改成了伪元素 ::-moz-placeholder_
+  
+  **Trident**
+  
+  Trident 通过伪类而不是伪元素来给 placeholder 文本添加样式。但是这个伪类， `:-ms-input-placeholder` ，可以像其它渲染引擎中伪元素的一样使用：
+  
+  ```html
+  <input placeholder="placeholder">
+  ```
+  
+  ```css
+  :-ms-input-placeholder {
+      color: blue;
+      font-family: 'Comic Sans MS';
+  }
+  ```
+  
+  这在 Windows 8 的 IE10 中显示成这样：
+  
+  ![](http://tjvantoll.com/images/posts/2013-04-15/trident-placeholder.png)
+  
+  **WebKit**
+  
+  WebKit 使用 `::-webkit-input-placeholder` 伪元素。同样也可以改变 placeholder 文本的颜色和字体：
+  
+  ```html
+  <input placeholder="placeholder">
+  ```
+  
+  ```css
+  ::-webkit-input-placeholder {
+      color: blue;
+      font-family: 'Comic Sans MS';
+  }
+  ```
+  
+  这在 OS X 的 Chrome 26 中显示成这样：
+  
+  ![](http://tjvantoll.com/images/posts/2013-04-15/webkit-placeholder.png)
+  
+#### input[type=range]
+
+  
+  
+  
+  
+  
+  
+  
+  
