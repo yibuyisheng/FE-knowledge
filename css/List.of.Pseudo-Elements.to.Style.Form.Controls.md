@@ -172,4 +172,28 @@
   
   ![](http://tjvantoll.com/images/posts/2013-04-15/webkit-input-file.png)
   
+#### input[type=number]
+
+  **WebKit**
+  
+  WebKit 默认情况下给数字输入框提供了一个增加减少小控件。伪元素 ::-webkit-textfield-decoration-container ， ::-webkit-inner-spin-button 和 ::-webkit-outer-spin-button 用于自定义样式。由于你不能用这些伪元素做很多默认样式修改，所以把增加减少控件隐藏起来的做法是很有用的。
+  
+  ```html
+  <input type="number">
+  ```
+  
+  ```css
+  ::-webkit-textfield-decoration-container { }
+  ::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+  }
+  ::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+  }
+  ```
+  
+  这在 OS X 的 Chrome 26 中显示成这样：
+  
+  ![](http://tjvantoll.com/images/posts/2013-04-15/webkit-input-number.png)
+  
   
