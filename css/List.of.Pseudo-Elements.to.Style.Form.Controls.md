@@ -39,3 +39,33 @@
 * 乱七八糟的
 
   - 表单验证提示信息
+
+#### input[type=button]
+  
+  ##### Gecko
+  
+  参考 [&lt;button&gt;](#)
+  
+#### input[type=checkbox] / input[type=radio]
+
+  ##### Trident
+  
+  Trident 引擎为复选框和单选框按钮控件提供了 `::-ms-check` 伪元素。例如：
+  
+  ```html
+  <input type="checkbox">
+  <input type="radio">
+  ```
+  
+  ```css
+  ::-ms-check {
+      color: red;
+      background: black;
+      padding: 1em;
+  }
+  ```
+  
+  上述在 Windows 8 的 IE10 下面显示成这样：
+  
+  ![](http://tjvantoll.com/images/posts/2013-04-15/trident-radio-checkbox.png)
+  
