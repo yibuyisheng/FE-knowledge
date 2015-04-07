@@ -128,4 +128,48 @@
   
   ![](http://tjvantoll.com/images/posts/2013-04-15/webkit-input-date.png)
   
+#### input[type=file]
+
+  所有的渲染引擎在 `<input type="file">` 创建的时候都会生成一个按钮。由于历史的原因，这个按钮完全不能自定义样式。但是，最近 Trident 和 WebKit 通过伪元素提供了修改样式的手段。
+  
+  **Trident**
+  
+  在 IE10 中，文件输入按钮可以通过使用 `::-ms-browse` 伪类来添加样式。基本上可以应用在普通按钮上的 CSS 规则都可以应用到这个伪类上面。例如：
+  
+  ```html
+  <input type="file">
+  ```
+  
+  ```css
+  ::-ms-browse {
+      background: black;
+      color: red;
+      padding: 1em;
+  }
+  ```
+  
+  这在 Windows 8 的 IE10 浏览器中显示成这样：
+  
+  ![](http://tjvantoll.com/images/posts/2013-04-15/trident-input-file.png)
+  
+  **WebKit**
+  
+  Webkit 提供了 `::-webkit-file-upload-button` 伪类。也可以应用相当多的 CSS 规则，因此上述 Trident 中的示例此时也有效：
+  
+  ```html
+  <input type="file">
+  ```
+  
+  ```css
+  ::-webkit-file-upload-button {
+      background: black;
+      color: red;
+      padding: 1em;
+  }
+  ```
+  
+  这在 OS X 的 Chrome 26 中显示成这样：
+  
+  ![](http://tjvantoll.com/images/posts/2013-04-15/webkit-input-file.png)
+  
   
