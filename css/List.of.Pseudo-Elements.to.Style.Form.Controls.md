@@ -42,13 +42,13 @@
 
 #### input[type=button]
   
-  ##### Gecko
+  **Gecko**
   
   参考 [&lt;button&gt;](#)
   
 #### input[type=checkbox] / input[type=radio]
 
-  ##### Trident
+  **Trident**
   
   Trident 引擎为复选框和单选框按钮控件提供了 `::-ms-check` 伪元素。例如：
   
@@ -68,4 +68,64 @@
   上述在 Windows 8 的 IE10 下面显示成这样：
   
   ![](http://tjvantoll.com/images/posts/2013-04-15/trident-radio-checkbox.png)
+  
+#### input[type=color]
+
+  **WebKit**
+  
+  Webkit 为颜色选择器提供了两个伪元素， `::-webkit-color-swatch-wrapper` 和 `::-webkit-color-swatch` 。你可以把大量规则应用到这些元素上面，但是我还没想出任何有用的应用场景。这里有一个示例，仅仅展示了能达到改变外观的目的：
+  
+  ```html
+  <input type="color">
+  ```
+  
+  ```css
+  ::-webkit-color-swatch-wrapper { border: 2px solid red; }
+  ::-webkit-color-swatch { opacity: 0.5; }
+  ```
+  
+  上述内容在 OS X 的 Chrome 26 上显示成这个样子：
+  
+  ![](http://tjvantoll.com/images/posts/2013-04-15/webkit-input-color.png)
+  
+#### input[type=date]
+
+  **WebKit**
+  
+  下列的 8 个伪元素在 Webkit 中用于自定义日历控件的文本框外表：
+  
+  * ::-webkit-datetime-edit
+  * ::-webkit-datetime-edit-fields-wrapper
+  * ::-webkit-datetime-edit-text
+  * ::-webkit-datetime-edit-month-field
+  * ::-webkit-datetime-edit-day-field
+  * ::-webkit-datetime-edit-year-field
+  * ::-webkit-inner-spin-button
+  * ::-webkit-calendar-picker-indicator
+
+  下面是这些元素的内部结构：
+  
+  ![](http://tjvantoll.com/images/posts/2013-04-15/webkit-input-date-shadow.png)
+  
+  所以，如果你觉得日历控件应该占用更多的空间，并且带有一个奇怪的颜色板，你可以使用如下代码：
+  
+  ```html
+  <input type="date">
+  ```
+  
+  ```css
+  ::-webkit-datetime-edit { padding: 1em; }
+  ::-webkit-datetime-edit-fields-wrapper { background: silver; }
+  ::-webkit-datetime-edit-text { color: red; padding: 0 0.3em; }
+  ::-webkit-datetime-edit-month-field { color: blue; }
+  ::-webkit-datetime-edit-day-field { color: green; }
+  ::-webkit-datetime-edit-year-field { color: purple; }
+  ::-webkit-inner-spin-button { display: none; }
+  ::-webkit-calendar-picker-indicator { background: orange; }
+  ```
+  
+  上述代码在 OS X 的 Chrome 26 上显示成这个样子：
+  
+  ![](http://tjvantoll.com/images/posts/2013-04-15/webkit-input-date.png)
+  
   
