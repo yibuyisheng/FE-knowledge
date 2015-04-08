@@ -491,4 +491,144 @@
 
   ![](http://tjvantoll.com/images/posts/2013-04-15/gecko-buttons.png)
 
+#### &lt;keygen&gt; 元素
+
+  **WebKit**
+
+  WebKit 提供 `::-webkit-keygen-select` 伪元素用于自定义 keygen 元素使用的下拉框。例如：
+
+  ```html
+  <keygen>
+  ```
+
+  ```css
+  ::-webkit-keygen-select {
+      background: black;
+      color: red;
+  }
+  ```
+
+  这在 OS X 的 Chrome 26 中显示成这样：
+
+  ![](http://tjvantoll.com/images/posts/2013-04-15/webkit-keygen.png)
+
+#### <meter> 元素
+
+  **WebKit**
+
+  WebKit 提供了 `::-webkit-meter-bar` ， `::-webkit-meter-even-less-good-value` ， `::-webkit-meter-optimum-value` ， 和 `::-webkit-meter-suboptimal-value` 伪元素来自定义 meter 元素的外观。
+
+  为了给伪元素添加样式，必须要在 meter 元素上设置 `-webkit-appearance` 为 `none` 。
+
+  在某个时间点，根据 meter 的值， `::-webkit-meter-even-less-good-value` ， `::-webkit-meter-optimum-value` ， 和 `::-webkit-meter-suboptimal-value` 中只有一个生效。
+
+  如下所示：
+
+  ```html
+  <meter low="69" high="80" max="100" optimum="100" value="92">A</meter>
+  <meter low="69" high="80" max="100" optimum="100" value="72">C</meter>
+  <meter low="69" high="80" max="100" optimum="100" value="52">E</meter>
+  ```
+
+  ```css
+  meter { -webkit-appearance: none; }
+  ::-webkit-meter-bar {
+      height: 50px;
+      background: white;
+      border: 2px solid black;
+  }
+  ::-webkit-meter-optimum-value { background: green; }
+  ::-webkit-meter-suboptimum-value { background: orange; }
+  ::-webkit-meter-even-less-good-value { background: blue; }
+  ```
+
+  这在 OS X 中的 Chrome 26 中显示成这样：
+
+  ![](http://tjvantoll.com/images/posts/2013-04-15/webkit-meter.png)
+
+#### &lt;progress&gt; 元素
+
+  **WebKit**
+
+  WebKit 提供 `::-webkit-progress-inner-element` ， `::-webkit-progress-bar` ， 和 `::-webkit-progress-value` 给进度元素添加样式，层级结构如下：
+
+  ![](http://tjvantoll.com/images/posts/2013-04-15/webkit-progress-shadow.png)
+
+  像 meter 一样，为了给这些元素应用样式，必须在进度元素上设置 `-webkit-appearance: none;` 。这里有个例子：
+
+  ```html
+  <progress max="100" value="50"></progress>
+  ```
+
+  ```css
+  progress { -webkit-appearance: none; }
+  ::-webkit-progress-inner-element { }
+  ::-webkit-progress-bar { border: 2px solid black; }
+  ::-webkit-progress-value { background: red; }
+  ```
+
+  这在 OS X 的 Chrome 26 中显示成这样：
+
+  ![](http://tjvantoll.com/images/posts/2013-04-15/webkit-progress.png)
+
+  **Gecko**
+
+  Gecko 提供 ::-moz-progress-bar 伪元素来给进度条本身添加样式。例如：
+
+  ```html
+  <progress max="100" value="50"></progress>
+  ```
+
+  ```css
+  ::-moz-progress-bar { background: red; }
+  ```
+
+  这在 OS X 的 FireFox 19 中显示成这样：
+
+  ![](http://tjvantoll.com/images/posts/2013-04-15/gecko-progress.png)
+
+  **Trident**
+
+  像 Gecko 一样， Trident 提供了一个伪元素来给进度条添加样式， `::-ms-fill` 。例如：
+
+  ```html
+  <progress max="100" value="50"></progress>
+  ```
+
+  ```css
+  ::-ms-fill { background: red; }
+  ```
+
+  这在 Windows 8 的 IE10 中显示成这样：
+
+  ![](http://tjvantoll.com/images/posts/2013-04-15/trident-progress.png)
+
+#### &lt;select&gt; 元素
+
+  **Trident**
+
+  在 IE10 中， Trident 提供了 `::-ms-expand` 来给 select 下拉框中的箭头添加样式，例如：
+
+  ```html
+  <select>
+      <option selected>One</option>
+  </select>
+  ```
+
+  ```css
+  ::-ms-expand {
+      padding: 2em;
+      color: red;
+      background: black;
+  }
+  ```
+
+  这在 Windows 8 的 IE10 中显示成这样：
+
+  ![](http://tjvantoll.com/images/posts/2013-04-15/trident-select.png)
+
+#### &lt;textarea&gt; 元素
+
+  **WebKit**
+
   
