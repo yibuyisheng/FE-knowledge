@@ -13,38 +13,34 @@
 
 * &lt;input&gt; 元素
 
-  - button
-  - checkbox / radio
-  - color
-  - date
-  - file
-  - number
-  - password
-  - placeholder attribute
-  - range
-  - reset
-  - search
-  - submit
-  - text
+  - [button](#inputtypebutton)
+  - [checkbox / radio](#inputtypecheckbox--inputtyperadio)
+  - [color](#inputtypecolor)
+  - [date](#inputtypedate)
+  - [file](#inputtypefile)
+  - [number](#inputtypenumber)
+  - [password](#inputtypepassword)
+  - [placeholder attribute](#placeholder-%E5%B1%9E%E6%80%A7)
+  - [range](#inputtyperange)
+  - [reset](#inputtypereset)
+  - [search](#inputtypesearch)
+  - [submit](#inputtypesubmit)
+  - [text](#inputtypetext)
 
 * 其它元素
 
-  - button
-  - keygen
-  - meter
-  - progress
-  - select
-  - textarea
-
-* 乱七八糟的
-
-  - 表单验证提示信息
+  - [button](#button-%E5%85%83%E7%B4%A0)
+  - [keygen](#keygen-%E5%85%83%E7%B4%A0)
+  - [meter](#meter-%E5%85%83%E7%B4%A0)
+  - [progress](#progress-%E5%85%83%E7%B4%A0)
+  - [select](#select-%E5%85%83%E7%B4%A0)
+  - [textarea](#textarea-%E5%85%83%E7%B4%A0)
 
 #### input[type=button]
 
   **Gecko**
 
-  参考 [&lt;button&gt;](#)
+  参考 [&lt;button&gt;](#button-%E5%85%83%E7%B4%A0)
 
 #### input[type=checkbox] / input[type=radio]
 
@@ -365,7 +361,7 @@
 
   **Gecko**
   
-  参考 [&lt;button&gt;](#)
+  参考 [&lt;button&gt;](#button-%E5%85%83%E7%B4%A0)
 
 #### input[type=search]
 
@@ -396,7 +392,7 @@
 
   **Gecko**
   
-  参考 [&gt;button&lt;](#)
+  参考 [&lt;button&gt;](#button-%E5%85%83%E7%B4%A0)
   
 #### input[type=text]
 
@@ -512,7 +508,7 @@
 
   ![](http://tjvantoll.com/images/posts/2013-04-15/webkit-keygen.png)
 
-#### <meter> 元素
+#### &lt;meter&gt; 元素
 
   **WebKit**
 
