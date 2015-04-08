@@ -279,8 +279,89 @@
   
 #### input[type=range]
 
+  **Gecko**
+  
+  在 FireFox 22 中， Gecko 提供了 `::-moz-range-track` 伪类和 `::-moz-range-thumb` 伪类来给范围输入框添加样式。可以给这些伪元素添加大多数的 CSS 样式规则，例如：
+  
+  ```html
+  <input type="range">
+  ```
+  
+  ```css
+  ::-moz-range-track {
+      border: 2px solid red;
+      height: 20px;
+      background: orange;
+  }
+  ::-moz-range-thumb {
+      background: blue;
+      height: 30px;
+  }
+  ```
+  
+  这在 OS X 的 FireFox 22 中显示成这样：
+  
+  ![](http://tjvantoll.com/images/posts/2013-04-15/gecko-input-range.png)
+  
+  **Trident**
+  
+  Trident 提供了很多的伪元素来控制范围选择器的样式。
+  
+  `::-ms-fill-lower` ： The track portion underneath / before the handle.
+  `::-ms-fill-upper` ： The track portion above / after the handle.
+  `::-ms-ticks-before` ： An area above / before the range track with tick marks.
+  `::-ms-ticks-after` ： An area below / after the range track with tick marks.
+  `::-ms-thumb` ： The handle.
+  `::-ms-track` ： The range track itself.
+  `::ms-tooltip` ： The tooltip that appears when the user is selecting a value with the range selector. Note that this element cannot be styled, only hidden using `display: none`.
+  
+  用例子来展示这些显得更加简单生动。有如下代码：
+  
+  ```html
+  <input type="range">
+  ```
+  
+  ```css
+  ::-ms-fill-lower { background: orange; }
+  ::-ms-fill-upper { background: green; }
+  ::-ms-thumb { background: red; }
+  ::-ms-ticks-after { display: block; color: blue; }
+  ::-ms-ticks-before { display: block; color: black; }
+  ::-ms-track { padding: 20px 0; }
+  ::-ms-tooltip { display: none; /* display and visibility only */ }
+  ```
   
   
+  这在 Windows 8 的 IE10 中显示成这样：
+  
+  ![](http://tjvantoll.com/images/posts/2013-04-15/trident-input-range.png)
+  
+  **WebKit**
+  
+  WebKit 提供 `::-webkit-slider-runnable-track` 伪元素给滑道， `::-webkit-slider-thumb` 给范围控制块。虽然不能用这些伪元素做太多的事情，但是还是可以添加一些颜色和内边距：
+  
+  ```html
+  <input type="range">
+  ```
+  
+  ```css
+  ::-webkit-slider-runnable-track {
+      border: 2px solid red;
+      background: green;
+      padding: 2em 0;
+  }
+  ::-webkit-slider-thumb {
+      outline: 2px solid blue;
+  }
+  ```
+  
+  这在 OS X 的 Chrome 26 中显示成这样：
+  
+  ![](http://tjvantoll.com/images/posts/2013-04-15/webkit-input-range.png)
+  
+  最后一点关于范围输入框的注意点是， Trident 和 Webkit 允许给小滑块伪元素添加 hover 样式（分别用 ::-webkit-slider-thumb:hover 和 ::-ms-thumb:hover ），但是 Gecko 目前还不支持。
+  
+    
   
   
   
