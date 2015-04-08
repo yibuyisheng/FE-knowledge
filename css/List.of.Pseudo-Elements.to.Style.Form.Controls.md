@@ -41,22 +41,22 @@
   - 表单验证提示信息
 
 #### input[type=button]
-  
+
   **Gecko**
-  
+
   参考 [&lt;button&gt;](#)
-  
+
 #### input[type=checkbox] / input[type=radio]
 
   **Trident**
-  
+
   Trident 引擎为复选框和单选框按钮控件提供了 `::-ms-check` 伪元素。例如：
-  
+
   ```html
   <input type="checkbox">
   <input type="radio">
   ```
-  
+
   ```css
   ::-ms-check {
       color: red;
@@ -64,17 +64,17 @@
       padding: 1em;
   }
   ```
-  
+
   上述在 Windows 8 的 IE10 下面显示成这样：
-  
+
   ![](http://tjvantoll.com/images/posts/2013-04-15/trident-radio-checkbox.png)
-  
+
 #### input[type=color]
 
   **WebKit**
-  
+
   Webkit 为颜色选择器提供了两个伪元素， `::-webkit-color-swatch-wrapper` 和 `::-webkit-color-swatch` 。你可以把大量规则应用到这些元素上面，但是我还没想出任何有用的应用场景。这里有一个示例，仅仅展示了能达到改变外观的目的：
-  
+
   ```html
   <input type="color">
   ```
@@ -399,9 +399,65 @@
   参考 [&gt;button&lt;](#)
   
 #### input[type=text]
-  
-  
-  
-  
-  
+
+  **Trident**
+
+  在 IE10 的 Trident 引擎中，提供了 `::-ms-value` 伪元素来给文本输入框（ `input[type=text]` ， `input[type=password]` ， 等等）和 `<select>` 的值部分添加样式。例如：
+
+  ```html
+  <input type="text" value="value">
+  <input type="password" value="value">
+  <select><option selected>option</option></select>
+  ```
+
+  ```css
+  ::-ms-value {
+      color: red;
+      background: black;
+      padding: 1em;
+  }
+  ```
+
+  这在 Windows 8 的 IE10 中显示成这样：
+
+  ![](http://tjvantoll.com/images/posts/2013-04-15/trident-value.png)
+
+  **清除控件（ Clear Control ）**
+
+  在 IE10 中，当一个文本输入框获取到了焦点并且不为空的时候，一个小 X 控件出现在输入框的右侧。当点击的时候，控件将会清除文本框的内容。可以用 `::-ms-clear` 伪元素来给它添加样式。因此你可以隐藏这个 X 控件：
+
+  ```html
+  <input type="text">
+  ```
+
+  ```css
+  ::-ms-clear { display: none; }
+  ```
+
+  这在 Windows 8 的 IE10 中显示成这样：
+
+  ![](http://tjvantoll.com/images/posts/2013-04-15/trident-input-clear.png)
+
+  `::-ms-clear` 接受很多样式规则，因此你也可以给 X 控件添加样式主题：
+
+  ```html
+  <input type="text" value="Lorem Ipsum">
+  ```
+
+  ```css
+  ::-ms-clear {
+      color: red;
+      background: black;
+      padding: 1em;
+  }
+  ```
+
+  这会显示成这样：
+
+  ![](http://tjvantoll.com/images/posts/2013-04-15/trident-input-clear-fancy.png)
+
+#### &lt;button&gt; 元素
+
+  **Gecko**
+
   
