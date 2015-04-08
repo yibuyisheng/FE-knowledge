@@ -631,4 +631,42 @@
 
   **WebKit**
 
-  
+  WebKit 提供 `::-webkit-resizer` 伪元素来给自动添加到 textarea 元素右下角的控制输入框大小的控件设置样式。
+
+  可以用 `display: none` 或者 `-webkit-appearance: none` 来隐藏它：
+
+  ```html
+  <textarea></textarea>
+  ```
+
+  ```css
+  ::-webkit-resizer {
+      display: none;
+  }
+  ```
+
+  这在 OS X 的 Chrome 26 中显示成这样：
+
+  ![](http://tjvantoll.com/images/posts/2013-04-15/webkit-textarea-hide.png)
+
+  注意：给 `::-webkit-resizer` 添加 `display: none` 并不能阻止用户改变 textarea 的大小，仅仅是隐藏改变大小的按钮而已。如果想禁止改变大小，设置[改变大小的 CSS 属性](https://developer.mozilla.org/en-US/docs/CSS/resize)为 `none` 。这同样也可以隐藏改变大小的按钮，同时在支持 textarea 改变大小的浏览器中都有效果。
+
+  `::-webkit-resizer` 伪元素也接受一些基本的样式。如果你觉得改变大小的控件应该显示更有意义的颜色，你可以添加如下代码：
+
+  ```html
+  <textarea></textarea>
+  ```
+
+  ```css
+  ::-webkit-resizer {
+      border: 2px solid black;
+      background: red;
+      box-shadow: 0 0 5px 5px blue;
+      outline: 2px solid yellow;
+  }
+  ```
+
+  这在 OS X 的 Chrome 26 中显示成这样：
+
+  ![](http://tjvantoll.com/images/posts/2013-04-15/webkit-textarea-style.png)
+
