@@ -460,4 +460,35 @@
 
   **Gecko**
 
+  Gecko 给类型为 `button` ， `reset` ， 和 `submit` 的输入元素提供了 `::-moz-focus-outer` 和 `::-moz-focus-inner` 伪元素，同时也为 `&lt;button&gt;` 元素提供了。
+
+  用这些伪元素并不能做太多的事情，但是有一件重要的事情必须要清楚。 Gecko 默认情况下给 `::-moz-focus-inner` 添加了 `padding` 和 `border` ：
+
+  ```html
+  button::-moz-focus-inner,
+  input[type="reset"]::-moz-focus-inner,
+  input[type="button"]::-moz-focus-inner,
+  input[type="submit"]::-moz-focus-inner,
+  input[type="file"] > input[type="button"]::-moz-focus-inner {
+      border: 1px dotted transparent;
+      padding: 0 2px;
+  }
+  ```
+
+  这些规则可以轻易使控件的外观在 Gecko 中看起来和其它渲染引擎中不一样。这使人很困惑，实际上[有一种方法来移除它](https://bugzilla.mozilla.org/show_bug.cgi?id=140562)。
+
+  默认的 `padding` 和 `border` 可以重置为 0：
+
+  ```css
+  button::-moz-focus-inner,
+  input::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+  }
+  ```
+
+  在 OS X 的 FireFox 19 中，重置之前和重置之后的样子如下：
+
+  ![](http://tjvantoll.com/images/posts/2013-04-15/gecko-buttons.png)
+
   
