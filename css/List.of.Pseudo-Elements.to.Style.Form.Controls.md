@@ -307,13 +307,13 @@
   
   Trident 提供了很多的伪元素来控制范围选择器的样式。
   
-  `::-ms-fill-lower` ： The track portion underneath / before the handle.
-  `::-ms-fill-upper` ： The track portion above / after the handle.
-  `::-ms-ticks-before` ： An area above / before the range track with tick marks.
-  `::-ms-ticks-after` ： An area below / after the range track with tick marks.
-  `::-ms-thumb` ： The handle.
-  `::-ms-track` ： The range track itself.
-  `::ms-tooltip` ： The tooltip that appears when the user is selecting a value with the range selector. Note that this element cannot be styled, only hidden using `display: none`.
+  * `::-ms-fill-lower` ： The track portion underneath / before the handle.
+  * `::-ms-fill-upper` ： The track portion above / after the handle.
+  * `::-ms-ticks-before` ： An area above / before the range track with tick marks.
+  * `::-ms-ticks-after` ： An area below / after the range track with tick marks.
+  * `::-ms-thumb` ： The handle.
+  * `::-ms-track` ： The range track itself.
+  * `::ms-tooltip` ： The tooltip that appears when the user is selecting a value with the range selector. Note that this element cannot be styled, only hidden using `display: none`.
   
   用例子来展示这些显得更加简单生动。有如下代码：
   
@@ -361,7 +361,44 @@
   
   最后一点关于范围输入框的注意点是， Trident 和 Webkit 允许给小滑块伪元素添加 hover 样式（分别用 ::-webkit-slider-thumb:hover 和 ::-ms-thumb:hover ），但是 Gecko 目前还不支持。
   
-    
+#### input[type=reset]
+
+  **Gecko**
+  
+  参考 [&lt;button&gt;](#)
+
+#### input[type=search]
+
+  **WebKit**
+  
+  默认情况下 WebKit 给 search 输入框提供了取消和搜索按钮。两个伪元素， `::-webkit-search-cancel-button` 和 `::-webkit-search-results-button` 用于自定义样式，虽然不能用它们做太多的事情，除了像下面一样隐藏它们：
+  
+  ```html
+  <input type="search">
+  ```
+  
+  ```css
+  /* Remove the rounded corners */
+  input[type=search] { -webkit-appearance: none; }
+  
+  /* Hide the cancel button */
+  ::-webkit-search-cancel-button { -webkit-appearance: none; }
+  
+  /* Hide the magnifying glass */
+  ::-webkit-search-results-button { -webkit-appearance: none; }
+  ```
+  
+  这在 OS X 的 Chrome 26 中显示成这样：
+  
+  ![](http://tjvantoll.com/images/posts/2013-04-15/webkit-input-search.png)
+  
+#### input[type=submit]
+
+  **Gecko**
+  
+  参考 [&gt;button&lt;](#)
+  
+#### input[type=text]
   
   
   
