@@ -7,4 +7,5 @@
   ```
 * [行内元素](https://github.com/yibuyisheng/FE-knowledge/blob/master/css/inlineBox.md)
 * background-attachment
+* background-position 可以设置百分数参数，水平方向计算公式为：(元素宽度-图片宽度)*百分数，垂直方向类似
 * [浮动](https://github.com/yibuyisheng/FE-knowledge/blob/master/css/float.md)
