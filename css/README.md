@@ -7,3 +7,4 @@
   ```
 * [行内元素](https://github.com/yibuyisheng/FE-knowledge/blob/master/css/inlineBox.md)
 * background-attachment
+* [浮动](https://github.com/yibuyisheng/FE-knowledge/blob/master/css/float.md)
