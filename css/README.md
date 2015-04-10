@@ -10,3 +10,4 @@
 * background-position 可以设置百分数参数，水平方向计算公式为：(元素宽度-图片宽度)*百分数，垂直方向类似
 * [浮动](https://github.com/yibuyisheng/FE-knowledge/blob/master/css/float.md)
 * [BFC](http://www.cnblogs.com/lhb25/p/inside-block-formatting-ontext.html)
+* [定位](https://github.com/yibuyisheng/FE-knowledge/blob/master/css/position.md)
