@@ -26,3 +26,8 @@
   - 如果没有祖先，元素的包含块定义为初始包含块。
 
 * 对 position 为 relative 、 absolue 和 fixed 的元素设置 top 、 right 、 bottom 、left 为百分数的时候， top 、 bottom 是相对于包含块的高度的， right 、 left 是相对于包含块的宽度的。
+* 对于绝对定位元素，如果 top 设置为 auto ，则该定位元素的顶端要相对于其未定位前本来的顶端位置对齐。left 、 right 也是这样。
+  
+  - 当设置 left 为 auto 时，元素的左边界会相对于包含块的左边界放置；
+  - 当设置 top 为 auto 时，
+
