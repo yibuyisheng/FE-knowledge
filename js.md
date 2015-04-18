@@ -116,6 +116,10 @@
   delete a.t;
   console.log('t' in a); // false
   ```
+
+* delete 只能删除对象的自有属性，不能删除继承属性，不能删除可配置性为 false 的属性（可以删除不可扩展对象的可配置属性）。
+
+* 当 delete 表达式删除成功或没有任何副作用（比如删除不存在的属性）时，它返回 true 。
   
 * void 是一元运算符，它出现在操作数之前，操作数可以是任意类型。操作数会照常计算，但忽略计算结果并返回 undefined 。由于 void 会忽略操作数的值，因此在操作数具有副作用的时候使用 void 来让程序更语义。
 
@@ -169,3 +173,5 @@
   ```
   
 * [strict 模式](https://github.com/yibuyisheng/FE-knowledge/blob/master/js/strict.md)
+
+* [JavaScript 对象](https://github.com/yibuyisheng/FE-knowledge/blob/master/js/object.md)
