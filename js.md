@@ -41,3 +41,5 @@
   - 3、否则， JavaScript 无法从 toString() 或 valueOf() 获得一个原始值，抛出类型错误异常。
   
   在对象到数字的转换过程中，会做同样的事情，只不过会首先尝试 valueOf() 方法。
+
+* IE8 中的跨域方案： [XDomainRequest](https://msdn.microsoft.com/en-us/library/ie/cc288060(v=vs.85).aspx)
