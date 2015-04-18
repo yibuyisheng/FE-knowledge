@@ -126,3 +126,42 @@
       console.log('function');
   }
   ```
+  
+* for/in 循环只能遍历 “可枚举” 的属性。由 JavaScript 语言核心所定义的内置方法就不是“可枚举的”。
+
+  除了内置方法之外，还有很多内置对象的属性也是“不可枚举的”。
+  
+  代码中定义的所有属性和方法都是可枚举的，但在 ECMAScript 5中可以通过特殊手段让可枚举属性变为不可枚举。
+  
+  那些继承的自定义属性也可以使用 for/in 枚举出来。
+  
+  如果 for/in 删除了还未枚举的属性，那么这个属性将不会再枚举到。
+  
+  如果循环体定义了对象的新属性，这些属性通常也不会枚举到（ JavaScript 有些实现是可以枚举到那些在循环体中增加的继承属性的）。
+  
+* ```js
+  function fun1() {
+      try {
+          return 1;
+      } catch(e) {
+          return 2;
+      } finally {
+          return 3;
+      }
+  }
+  
+  console.log(fun1()); // 3
+  
+  function fun2() {
+      try {
+          throw new Error('');
+          return 1;
+      } catch(e) {
+          return 2;
+      } finally {
+          return 3;
+      }
+  }
+  
+  console.log(fun2()); // 3
+  ```
