@@ -118,3 +118,11 @@
   ```
   
 * void 是一元运算符，它出现在操作数之前，操作数可以是任意类型。操作数会照常计算，但忽略计算结果并返回 undefined 。由于 void 会忽略操作数的值，因此在操作数具有副作用的时候使用 void 来让程序更语义。
+
+* ```js
+  fun1(); // throw ReferenceError: fun1 is not defined
+  fun2(); // throw TypeError: undefined is not a function
+  var fun2 = function fun1() {
+      console.log('function');
+  }
+  ```
