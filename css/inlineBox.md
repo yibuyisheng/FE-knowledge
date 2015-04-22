@@ -84,4 +84,7 @@
 
 * 替换元素可以增加行框的高度，但不影响 line-height 的值。默认情况下，行内替换元素的行内框底部与本行基线一致。行内替换元素的 vertical-align 百分数值要相对于该元素的 line-height 来计算。
 
+* font-size 可以设置百分数，其值相对于父元素的 font-size 来计算。 line-height 的百分数相对于自身元素的 font-size 来计算。 vertical-align 的百分数相对于自身元素的 line-height 来计算。
+
+
 
