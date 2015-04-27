@@ -22,5 +22,27 @@
     </head>
   </html>
   ```
-  
+
   把这个 iframe 部署到父页面的同源服务上，就能在父页面直接调用 iframe 中的 encoding 接口了。
+
+* 从 IE5 开始，IE 支持 attachEvent() 、 detachEvent() 。
+
+* attachEvent() 允许相同的事件处理程序函数注册多次，当特定的事件类型发生时，注册函数的调用次数和注册次数一样。
+
+* 通常调用事件处理程序时把事件对象作为它们的一个参数。在 IE8 及以前版本中，通过设置属性注册事件处理程序，当调用它们时并未传递事件对象，取而代之，需要通过全局对象 window.event 来获得事件对象。
+
+* 使用 attachEvent() 注册的处理程序作为函数调用，它们的 this 值是全局 Window 对象。
+
+* 通常情况下，通过设置对象属性或 HTML 属性来添加事件回调函数，在函数返回 false 的时候可以阻止这个事件相关的默认操作。在支持 addEventListener() 的浏览器中，通过调用事件对象的 preventDefault() 方法取消事件的默认操作。在 IE9 之前的 IE 中，设置事件对象的 returnValue 属性为 false 来达到同样的效果。
+
+* 当某个事件发生时，浏览器必须按如下规则调用所有的事件处理程序：
+
+  - 通过设置对象属性或 HTML 属性注册的处理程序一直优先调用；
+  - 使用 addEventListener() 注册的处理程序按照它们的注册顺序调用；
+  - 使用 attachEvent() 注册的处理程序可能按照任何顺序调用。
+
+* focus 、 blur 、 scroll 不会冒泡；文档元素上的 load 事件会冒泡，但会在 Document 对象上停止冒泡而不会传播到 Window 对象。只有当整个文档都加在完毕时才会触发 Window 的 load 事件。
+
+* 在支持 addEventListener() 的浏览器中，调用 stopPropagation() 来阻止事件继续传播，包括捕获阶段、事件目标本身中和冒泡阶段； IE9 之前的 IE 通过 cancelBubble 设置为 true 来阻止传播。
+
+* stopImmediatePropagation()
