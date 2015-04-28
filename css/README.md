@@ -13,3 +13,4 @@
 * [定位](https://github.com/yibuyisheng/FE-knowledge/blob/master/css/position.md)
 * clip 中的 rect(top, right, bottom, left) 四个点的值不是边偏移，而是距该裁剪元素左上角的距离（从左向右读的语言）。 rect() 只允许长度值和 auto ，不允许百分数。
 * 将一个 `visibility: hidden` 元素的后代元素设置为 `visible` ，这会使后代元素正常出现，尽管其祖先元素是不可见的。
+* -webkit-mask 、 -webkit-text-stroke 、 -webkit-nbsp-mode 、 -webkit-tap-highlight-color 、 zoom: reset 、 -webkit-text-size-adjust 、 -webkit-margin-collapse 、 -webkit-box-reflect 、 -webkit-marquee 
