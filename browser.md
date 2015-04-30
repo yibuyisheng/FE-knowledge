@@ -46,3 +46,45 @@
 * 在支持 addEventListener() 的浏览器中，调用 stopPropagation() 来阻止事件继续传播，包括捕获阶段、事件目标本身中和冒泡阶段； IE9 之前的 IE 通过 cancelBubble 设置为 true 来阻止传播。
 
 * stopImmediatePropagation()
+
+* 当文档准备就绪时调用函数：
+  
+  ```js
+  /**
+  *  DOMContentLoaded 、 readystatechange 、 或 load 事件发生的时候会触发回调
+  */
+  var whenReady = (function() {
+    var funcs = [];
+    var ready = false;
+    
+    function handler(e) {
+      if (ready) return;
+      
+      if (e.type === 'readystatechange' && document.readystate !== 'complete') {
+        return;
+      }
+      
+      for (var i = 0, il = funcs.length; i < il; i++) {
+        funcs[i].call(document);
+      }
+      
+      ready = true;
+      funcs = null;
+    }
+    
+    if (document.addEventListener) {
+      document.addEventListener('DOMContentLoaded', handler, false);
+      document.addEventListener('readystatechange', handler, false);
+      window.addEventListener('load', handler, false);
+    } else if (document.attachEvent) {
+      document.attachEvent('onreadystatechange', handler);
+      window.attachEvent('onload', handler);
+    }
+    
+    return function whenReady(f) {
+      if (ready) f.call(document);
+      else funcs.push(f);
+    }
+  })();
+  ```
+
