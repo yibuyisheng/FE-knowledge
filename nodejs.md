@@ -11,3 +11,9 @@
   ```
 
   上述参数在 V8 初始化时生效，一旦生效就不能动态改变。
+
+* 查看垃圾的回收日志
+
+  ```
+  node --trace_gc -e "var a = [];for (var i = 0; i < 1000000; i++) a.push(new Array(100));" > gc.log
+  ```
