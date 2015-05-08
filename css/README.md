@@ -14,3 +14,4 @@
 * clip 中的 rect(top, right, bottom, left) 四个点的值不是边偏移，而是距该裁剪元素左上角的距离（从左向右读的语言）。 rect() 只允许长度值和 auto ，不允许百分数。
 * 将一个 `visibility: hidden` 元素的后代元素设置为 `visible` ，这会使后代元素正常出现，尽管其祖先元素是不可见的。
 * [CSS 的未来：一些试验性 CSS 属性](http://www.qianduan.net/the-future-of-css-experimental-css-properties/)
+* [-webkit-line-clamp](http://blog.csdn.net/kongjiea/article/details/40076363)
