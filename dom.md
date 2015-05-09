@@ -57,3 +57,19 @@
 * scrollLeft 、 scrollTop 指定元素滚动条位置。
 
 * 浏览器不保证调用 form 的 submit() 方法的时候出发 submit 事件，然而，可以通过触发表单中的提交按钮来间接触发 submit 事件。
+
+* cloneNode() 方法不会复制添加到 DOM 节点中的 JavaScript 属性，例如事件处理程序等。这个方法只复制特性、（在明确指定的情况下也复制）子节点，其他一切都不会复制。 IE 在此存在一个 bug ，即它会复制事件处理程序，所以建议在复制之前最好先移除事件处理程序。
+
+* replaceChild() 、 appendChild() 、 insertBefore() 等将一个已经在 DOM 树中的节点对象移动到另外一个地方的过程中，会移动走一切与该对象相关的内容，比如事件属性、各种自定义属性等等。
+
+* 浏览器对 document.doctype 的支持差别很大，可以给出如下总结：
+
+    - IE8 及之前版本：如果存在文档类型声明，会将其错误地解释为一个注释并把它当做 Comment 节点；而 document.doctype 的值始终为 null 。
+    - IE9+ 及 Firefox ： 如果存在文档类型声明，则将其作为文档的第一个子节点； document.doctype 是一个 DocumentType 节点，也可以通过 document.firstChild 或 document.childNodes[0] 访问同一个节点。
+    - Safari 、 Chrome 和 Opera ： 如果存在文档类型声明，则将其解析，但不作为文档的子节点。 document.doctype 是一个 DocumentType 节点，但该节点不会出现在 document.childNodes 中。
+
+* IE8 及较低版本不区分 ID 的大小写。
+
+* getElementsByName() 是 HTMLDocument 类型才有的方法。
+
+* document.anchors 文档中所有带 name 属性的 <a> 元素； document.links 文档中所有带 href 属性的 <a> 元素。
