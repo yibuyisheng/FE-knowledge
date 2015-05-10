@@ -31,4 +31,4 @@
   - 当设置 left 为 auto 时，元素的左边界会相对于包含块的左边界放置；
   - 当设置 top 为 auto 时，
 
-* position 为 absolute 的元素，其 height 设置为百分数的时候，具体高度是相对于包含块来计算的，而 fixed 是相对于根元素计算的，例如：[https://jsfiddle.net/yibuyisheng/hrL23vct/](https://jsfiddle.net/yibuyisheng/hrL23vct/)
+* position 为 absolute 的元素，其 height 设置为百分数的时候，具体高度是相对于包含块来计算的，而 fixed 是相对于根元素计算的，例如：[https://jsfiddle.net/yibuyisheng/hrL23vct/](https://jsfiddle.net/yibuyisheng/hrL23vct/)。但是如果直接设置 height 为 inherit 的话，就直接从父元素继承高度了，而不再是包含块。
