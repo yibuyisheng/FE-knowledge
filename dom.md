@@ -73,3 +73,18 @@
 * getElementsByName() 是 HTMLDocument 类型才有的方法。
 
 * document.anchors 文档中所有带 name 属性的 <a> 元素； document.links 文档中所有带 href 属性的 <a> 元素。
+ 
+* 每当将事件处理程序指定给元素时，运行中的浏览器代码与支持页面交互的 JavaScript 代码之间就会建立一个连接。这种连接越多，页面执行起来就越慢。
+
+  通过 removeChild() 、 replaceChild() 和 innerHTML 等方式从文档中移除带有事件处理程序程序的元素时，就会造成“空事件处理程序”的问题，这些无用的事件处理程序会拖慢页面运行速度，甚至造成内存泄露。比如：
+  
+  ```js
+  var btn = document.getElementById('myBtn');
+  btn.onclick = function() {
+    btn.parentNode.innerHTML = 'Processing ...';
+  };
+  ```
+  
+  有的浏览器（尤其是 IE ）在这种情况下不会作出恰当地处理，它们很可能会将对元素和对事件处理程序的引用都保存在内存中。
+  
+  因此，如果知道某个元素即将被移除，那么最好手工移除事件处理程序。
