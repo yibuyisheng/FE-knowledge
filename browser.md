@@ -87,4 +87,22 @@
     }
   })();
   ```
+  
+* 在 IE8 和 IE7 下，通过相邻选择符（+）指定样式的元素，并不能和动态的添加 class 或者动态插入元素等很好合作，比如下面例子：
+
+  ```html
+  <span id='span1'>span1</span>
+  <span>span2</span>
+  <button id='btn'>select span1</button>
+  
+  #span1.selected + span {
+      background-color:red;
+  }
+  
+  $('#btn').click(function() {
+      $('#span1').addClass('selected');
+  });
+  ```
+  
+  在 IE8 和 IE7 下，点击按钮 btn 之后，第二个 span 标签的背景色并不会变为红色，此时可以通过在父元素上切换 class 使其重绘，从而正常显示颜色。
 
