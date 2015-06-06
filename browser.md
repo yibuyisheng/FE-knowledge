@@ -105,4 +105,15 @@
   ```
   
   在 IE8 和 IE7 下，点击按钮 btn 之后，第二个 span 标签的背景色并不会变为红色，此时可以通过在父元素上切换 class 使其重绘，从而正常显示颜色。
+  
+*   ie8 splice() 下有问题，只会改变 length ，并设置元素索引，但不会删除元素：
+  
+  ```js
+  var t = {0:'a', 1: 'b', 2:'c', 3:'d', length: 4};
+  [].splice.call(t, 3, 1);
+  alert(t.length)
+  for(var k in t) {
+      alert(k+ ':' + t[k])
+  }
+  ```
 
