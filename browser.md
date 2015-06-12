@@ -119,3 +119,4 @@
 
 * IE6/IE7 不支持中括号形式获取指定位置的字符（str[0]）。
 
+* chrome 清除 DNS cache ： chrome://net-internals/#dns 。
