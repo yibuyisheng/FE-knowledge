@@ -15,3 +15,4 @@
 * 将一个 `visibility: hidden` 元素的后代元素设置为 `visible` ，这会使后代元素正常出现，尽管其祖先元素是不可见的。
 * [CSS 的未来：一些试验性 CSS 属性](http://www.qianduan.net/the-future-of-css-experimental-css-properties/)
 * [-webkit-line-clamp](http://blog.csdn.net/kongjiea/article/details/40076363)
+* position: sticky 目前 firefox 和 safari 支持。
