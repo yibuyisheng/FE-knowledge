@@ -42,6 +42,21 @@
   let [a, b, c] = new Set(["a", "b", "c"]);
   let [a, b, c, d, e] = 'hello';
   let {length : len} = 'hello'; // len === 5
+  let { bar, foo } = { foo: "aaa", bar: "bbb" };
+  let { baz } = { foo: "aaa", bar: "bbb" };
+  let { foo: baz } = { foo: "aaa", bar: "bbb" }; // baz === 'aaa'
+  let { first: f, last: l } = { first: 'hello', last: 'world' };
+  let { p: [x, { y }] } = {
+    p: [
+      "Hello",
+      { y: "World" }
+    ]
+  };
+  let {x, y = 5} = {x: 1};
+  
+  // 默认值生效的条件是，对象的属性值严格等于undefined。
+  let {x = 3} = {x: undefined};
+  let {x = 3} = {x: null};
   ```
   
   本质上，这种写法属于“模式匹配”，只要等号两边的模式相同，左边的变量就会被赋予对应的值。如果解构不成功，变量的值就等于undefined。
