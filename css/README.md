@@ -16,3 +16,4 @@
 * [CSS 的未来：一些试验性 CSS 属性](http://www.qianduan.net/the-future-of-css-experimental-css-properties/)
 * [-webkit-line-clamp](http://blog.csdn.net/kongjiea/article/details/40076363)
 * position: sticky 目前 firefox 和 safari 支持。
+* 设置文本选中区域的背景色 `::selection` 、 `::-webkit-selection` 、 `::-moz-selection` 。
