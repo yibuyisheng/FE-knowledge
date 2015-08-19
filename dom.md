@@ -88,3 +88,28 @@
   有的浏览器（尤其是 IE ）在这种情况下不会作出恰当地处理，它们很可能会将对元素和对事件处理程序的引用都保存在内存中。
   
   因此，如果知道某个元素即将被移除，那么最好手工移除事件处理程序。
+
+* 如果想让 input 元素在获得焦点的时候，里面的文字全部选中，直接像下面这样干是不行的：
+
+ ```js
+ input.onfocus = function () {
+   input.select(); // Chrome 出现一瞬间全选中状态，然后变为未选中；firefox 是选中和选不中交替出现。
+ };
+ ```
+ 
+ 可以使用下面的方法解决这个问题：
+ 
+ ```js
+ input.onfocus = function () {
+   setTimeout(function () {
+     input.select();
+   }, 50);
+ };
+ ```
+ 
+ 或者：
+ 
+ ```js
+ input.onfocus = function () { this.select(); };
+ input.onmouseup = function () { return false; };
+ ```
