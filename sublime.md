@@ -6,6 +6,9 @@
 * material-theme
 * Project-Manager
 * SFTP
+* SideBarEnhancements
+* TrailingSpaces
+* Theme - Afterglow
 
 # Preferences.sublime-settings
 
