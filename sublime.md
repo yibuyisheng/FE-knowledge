@@ -3,12 +3,13 @@
 * Babel
 * ETPL
 * HTML-CSS-JS Prettify
-* material-theme
+* Materialize
 * Project-Manager
 * SFTP
 * SideBarEnhancements
 * TrailingSpaces
 * Theme - Afterglow
+* DocBlockr
 
 # Preferences.sublime-settings
 
