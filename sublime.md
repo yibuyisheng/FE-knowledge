@@ -47,7 +47,7 @@
 		120
 	],
 	"scroll_past_end": true,
-	"theme": "Material-Theme.sublime-theme",
+	"theme": "Material Brogrammer.sublime-theme",
 	"translate_tabs_to_spaces": true
 }
 ```
