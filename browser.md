@@ -120,3 +120,5 @@
 * IE6/IE7 不支持中括号形式获取指定位置的字符（str[0]）。
 
 * chrome 清除 DNS cache ： chrome://net-internals/#dns 。
+
+* 通过 CSSOM API 获取带前缀的样式值的时候，有坑：比如要获取 transform 的值，在较新的浏览器中，可以使用 `element.style['-webkit-transform']` 或者 `element.style.transform` 或者 `element.style.webkitTransform`，但是在较老版本浏览器中，就只能用 `element.style.webkitTransform` ，而老火狐更奇怪，要使用 `element.style.MozTransform` 。
